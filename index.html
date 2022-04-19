@@ -1,0 +1,219 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My first Leaflet</title>
+  <!---Link leaflet css and javascript--->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+  <body style = "background-color : #f9bdbb ;">
+
+  <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body{
+			font-family: 'Mitr', sans-serif;
+		}
+	</style>
+</head>
+<body>
+
+  <center><h1><font color="#5d4037">สถานที่ท่องเที่ยว ร้านอาหารและที่พักแนะนำ จังหวัดนครนายก </font></h1></center>
+  <center><div id="map" style="width: 1200px; height:650px"></div></center>
+  <!--- set center and Link map--->
+<script>
+
+  var map = L.map('map').setView([14.311514669370524, 101.28919400263992],14);
+  mapLink ='<a href="www.openstreetmap.org/copyright">Nattawat</a>';
+    var CartoDB_Positron = L.tileLayer(
+    'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">Nattawat</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 20,
+    }).addTo(map);
+
+    var greenIcon = L.icon({
+    iconUrl: 'https://www.gplace.com/include/images/icon_attraction.png',
+
+    iconSize:     [60, 45], // size of the icon
+    iconAnchor:   [34, 64], // point of the icon which will correspond to marker's location
+    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+    var marker = L.marker([14.314170775327057, 101.3213188465467],
+  {
+    icon: greenIcon,
+    draggable:true,
+    title:'เขื่อนขุนด่านปราการชล จังหวัดนรคนายก',
+    opacity:1.5
+  }
+)
+  .addTo(map)
+  .bindPopup("<b>เขื่อนขุนด่านปราการชล </b>")
+  .openPopup();
+
+  var marker = L.marker([14.333474145013929, 101.32084461038262],
+{
+  icon: greenIcon,
+  draggable:true,
+  title:'น้ำตกนางรอง จังหวัดนครนายก',
+  opacity:1.5
+}
+)
+  .addTo(map)
+  .bindPopup("<b>น้ำตกนางรอง </b>")
+  .openPopup();
+
+  var marker = L.marker([14.321351020550688, 101.30516435453531],
+{
+icon: greenIcon,
+draggable:true,
+title:'อุทยานวังตะไคร้ จังหวัดนครนายก',
+opacity:1.5
+}
+)
+  .addTo(map)
+  .bindPopup("<b>อุทยานน้ำตกวังตะไคร้ </b>")
+  .openPopup();
+
+  var marker = L.marker([14.30330563586283, 101.3037112127382],
+{
+  icon: greenIcon,
+  draggable:true,
+  title:'แก่งสามชั้น จังหวัดนครนายก',
+  opacity:1.5
+}
+)
+  .addTo(map)
+  .bindPopup("<b>แก่งสามชั้น </b>")
+  .openPopup();
+
+  var marker = L.marker([14.309710290791731, 101.25520177656934],
+{
+icon: greenIcon,
+draggable:true,
+title:'น้ำตกสาริกา จังหวัดนครนายก',
+opacity:1.5
+}
+)
+  .addTo(map)
+  .bindPopup("<b>น้ำตกสาริกา </b>")
+  .openPopup();
+
+  var bedIcon = L.icon({
+  iconUrl: 'https://www.gplace.com/include/images/icon_hotel.png',
+
+  iconSize:     [60, 45], // size of the icon
+  iconAnchor:   [34, 64], // point of the icon which will correspond to marker's location
+  popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+  var marker = L.marker([14.318554660202015, 101.30083898322255],
+{
+  icon: bedIcon,
+  draggable:true,
+  title:'ภูเขางาม รีสอร์ท ',
+  opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ภูเขางามรีสอร์ท </b>")
+.openPopup();
+
+var marker = L.marker([14.324760512029979, 101.31570065870294],
+{
+icon: bedIcon,
+draggable:true,
+title:'สีดา รีสอร์ท จังหวัดนครนายก',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>สีดา รีสอร์ท </b>")
+.openPopup();
+
+var marker = L.marker([14.3078060713605, 101.30802224634395],
+{
+icon: bedIcon,
+draggable:true,
+title:'อิงธาร รีสอร์ท จังหวัดนครนายก',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>อิงธาร รีสอร์ท </b>")
+.openPopup();
+
+var marker = L.marker([14.307849719312296, 101.25561713038675],
+{
+icon: bedIcon,
+draggable:true,
+title:'Namtok Sarika Resotel จังหวัดนครนายก',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>Namtok Sarika Resotel</b>")
+.openPopup();
+
+var foodIcon = L.icon({
+iconUrl: 'https://www.thisisnaive.com/wp-content/uploads/2017/02/1.png',
+
+iconSize:     [60, 45], // size of the icon
+iconAnchor:   [34, 64], // point of the icon which will correspond to marker's location
+popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+});
+var marker = L.marker([14.319040613765312, 101.30261894337443],
+{
+icon: foodIcon,
+draggable:true,
+title:'ครัวชมจันทร์นครนายก ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ครัวชมจันทร์นครนายก </b>")
+.openPopup();
+
+var marker = L.marker([14.320867441533117, 101.31165232424824],
+{
+icon: foodIcon,
+draggable:true,
+title:'ร้านอาหารไก่ย่างสองสาว  ',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ร้านไก่ย่างสองสาว </b>")
+.openPopup();
+
+var marker = L.marker([14.305355712058741, 101.25764754119733],
+{
+icon: foodIcon,
+draggable:true,
+title:'ร้านน้องปลา ไก่ย่าง ส้มตำ อาหารตามสั่ง',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ร้านน้องปลา ไก่ย่าง ส้มตำ อาหารตามสั่ง</b>")
+.openPopup();
+
+var marker = L.marker([14.30164661956784, 101.3073469751572],
+{
+icon: foodIcon,
+draggable:true,
+title:'ครัวเจ๊ดา บุฟเฟต์ทะเลเผา',
+opacity:1.5
+}
+)
+.addTo(map)
+.bindPopup("<b>ครัวเจ๊ดา บุฟเฟต์ทะเลเผา</b>")
+.openPopup();
+
+</script>
+</body>
+</html>
